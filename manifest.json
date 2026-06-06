@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Copy Analyzer",
+  "description": "Analyze highlighted text for marketing clarity",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

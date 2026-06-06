@@ -1,4 +1,4 @@
-console.log("Copy Analyzer loaded");
+console.log("COPY ANALYZER TEST VERSION 2 LOADED");
 
 document.addEventListener("mouseup", function() {
   const selectedText = window.getSelection().toString();

@@ -4,11 +4,11 @@ document.addEventListener("mouseup", function() {
   const selectedText = window.getSelection().toString();
 
   if (selectedText.length > 0) {
-      const existingBox = document.getElementById("copy-analyzer-box");
+    const existingBox = document.getElementById("copy-analyzer-box");
 
-  if (existingBox) {
-    existingBox.remove();
-  }
+    if (existingBox) {
+      existingBox.remove();
+    }
 
     const wordCount = selectedText.split(" ").length;
     let feedback = "";
@@ -21,9 +21,17 @@ document.addEventListener("mouseup", function() {
       feedback = "Too long for a headline";
     }
 
-   const box = document.createElement("div");
-box.id = "copy-analyzer-box";
-box.textContent = "Word count: " + wordCount + " - " + feedback;
+    const box = document.createElement("div");
+    box.id = "copy-analyzer-box";
+    box.textContent = "Word count: " + wordCount + " - " + feedback;
+    box.style.position = "fixed";
+    box.style.top = "20px";
+    box.style.right = "20px";
+    box.style.padding = "16px";
+    box.style.backgroundColor = "white";
+    box.style.color = "black";
+    box.style.border = "1px solid black";
+    box.style.zIndex = "999999";
 
     document.body.appendChild(box);
 

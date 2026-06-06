@@ -24,18 +24,23 @@ document.addEventListener("mouseup", function() {
     const box = document.createElement("div");
     box.id = "copy-analyzer-box";
     box.textContent = "Word count: " + wordCount + " - " + feedback;
-    box.style.position = "fixed";
-    box.style.top = "20px";
-    box.style.right = "20px";
-    box.style.padding = "16px";
-    box.style.backgroundColor = "white";
-    box.style.color = "black";
-    box.style.border = "1px solid black";
-    box.style.zIndex = "999999";
+    box.style.cssText = `
+      display: block !important;
+      position: fixed !important;
+      top: 20px !important;
+      right: 20px !important;
+      padding: 16px !important;
+      background: white !important;
+      color: black !important;
+      border: 2px solid black !important;
+      font: 16px Arial, sans-serif !important;
+      z-index: 2147483647 !important;
+    `;
 
-    document.body.appendChild(box);
+    document.documentElement.appendChild(box);
 
     console.log("Word count: " + wordCount);
     console.log("Feedback: " + feedback);
+    console.log("Visible box added:", document.getElementById("copy-analyzer-box"));
   }
 });
